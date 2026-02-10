@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    background-color: lightblue;
+    justify-content: center;
+}
+
+h1{
+    width: 100%;
+
+}
+
+.btnContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.container.img{
+    width: 100%;
+}

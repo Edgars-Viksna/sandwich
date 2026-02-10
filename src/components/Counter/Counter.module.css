@@ -1,0 +1,25 @@
+.btn{
+margin: 15px;
+border: 2px solid black;
+color: red;
+padding: 10px;
+border-radius: 20%;
+}
+
+.btnContainer{
+display: flex;
+justify-content: center;
+}
+
+.counterSpan{
+    margin-top: 20px;
+
+}
+
+h1{
+    text-align: center;
+}
+
+img{
+    width: 100%;
+}

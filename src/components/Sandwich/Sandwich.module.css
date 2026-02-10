@@ -1,0 +1,17 @@
+.btn {
+  margin: 15px;
+  border: 2px solid black;
+  color: rgb(238, 255, 0);
+  padding: 10px;
+  border-radius: 20%;
+}
+
+.span {
+  margin-top: 20px;
+  border: 2px solid black;
+  color: rgb(0, 255, 166);
+  padding: 5px;
+  background-color: rgb(9, 68, 216);
+  border-radius: 10%;
+  font-size: xx-large;
+}
