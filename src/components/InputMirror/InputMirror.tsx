@@ -1,0 +1,31 @@
+import React, { useState, type JSX } from "react";
+
+export default function InputMirror(): JSX.Element {
+  const [text, setText] = useState<string>("");
+
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>): void {
+    setText(event.target.value);
+  }
+
+  const containerStyle: React.CSSProperties = {
+    padding: "20px",
+    fontFamily: "sans-serif",
+  };
+
+  return (
+    <div style={containerStyle}>
+      <label htmlFor="message">
+        Enter text:{" "}
+        <input
+          type="text"
+          name=""
+          id="message"
+          value={text}
+          onChange={handleChange}
+          placeholder="start enter..."
+        />
+      </label>
+      <p>You have entered : {text || "nothing"}</p>
+    </div>
+  );
+}

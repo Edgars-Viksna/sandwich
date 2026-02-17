@@ -1,35 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout/Layout";
+import Alcohol from "./components/Alcohols/Alcohol";
+import ContactForm from "./components/ContactForm/ContactForm";
+import CarShop from "./components/CarShop/CarShop";
+import type { JSX } from "react";
+import Dog from "./components/Dogs/Dogs";
+import Sandwich from "./components/Sandwich/Sandwich";
+import UsersPage from "./components/UsersPage/types/UsersPage";
+import Home from "./components/Home/Home";
+import UserPage from "./components/UserPage/UserPage";
+import LoginPage from "./components/LoginPage";
+import ProtectedRoute from "./ProtectedRoute";
+import Products from "./components/Products/types/Products";
+import Product from "./components/Product/Product";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App(): JSX.Element {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Routes>
+      {/* публичный роут */}
+      <Route path="/login" element={<LoginPage />} />
+      {/* Это обычный маршрут:
+      /Login доступен всегда
+      не проверяется токен
+      не обёрнут в ProtectedRoute */}
 
-export default App
+      <Route element={<ProtectedRoute />}>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/alcohol" element={<Alcohol />} />
+          <Route path="/contactform" element={<ContactForm />} />
+          <Route path="/carshop" element={<CarShop />} />
+          <Route path="/dogs" element={<Dog />} />
+          <Route path="/sandwich" element={<Sandwich />} />
+          <Route path="/userspage" element={<UsersPage />} />
+          <Route path="/userspage/:userId" element={<UserPage />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:productId" element={<Product />} />
+        </Route>
+      </Route>
+    </Routes>
+  );
+}
