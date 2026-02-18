@@ -14,6 +14,7 @@ import LoginPage from "./components/LoginPage";
 import ProtectedRoute from "./ProtectedRoute";
 import Products from "./components/Products/types/Products";
 import Product from "./components/Product/Product";
+import WeatherApp from "./components/WeatherApp/WeatherApp.tsx";
 
 export default function App(): JSX.Element {
   return (
@@ -37,6 +38,7 @@ export default function App(): JSX.Element {
           <Route path="/userspage/:userId" element={<UserPage />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:productId" element={<Product />} />
+          <Route path="/weatherapp" element={<WeatherApp />} />
         </Route>
       </Route>
     </Routes>

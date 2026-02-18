@@ -1,0 +1,186 @@
+/* WeatherApp.module.css */
+
+/* 🔹 Общий фон страницы */
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #87ceeb, #f0f8ff); /* светлый градиент */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+}
+
+/* 🔹 Карточка формы и результата */
+.card {
+  background-color: #ffffffdd; /* светлая с лёгкой прозрачностью */
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* 🔹 Заголовок */
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* 🔹 Форма */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Поле ввода и кнопка в строке */
+.fieldRow {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Input поле */
+.input {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+  background-color: #fff;
+  color: #333;
+}
+
+.input:focus {
+  border-color: #0077ff;
+  outline: none;
+}
+
+/* Кнопка */
+.button {
+  padding: 0.6rem 1rem;
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #005fcc;
+}
+
+/* Ошибка валидации */
+.validation {
+  color: #ff3333;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+}
+
+/* Ошибка API */
+.errorBox {
+  color: #ff3333;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* 🔹 Результат погоды */
+.result {
+  margin-top: 2rem;
+  text-align: center;
+  background-color: #f0f8ff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Название города */
+.city {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* Большая температура */
+.bigTemp {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #0077ff;
+}
+
+/* Дополнительная информация */
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* 🔹 Тёмная тема */
+@media (prefers-color-scheme: dark) {
+  .page {
+    background: linear-gradient(to bottom, #0d1b2a, #1b263b);
+  }
+
+  .card {
+    background-color: #1b263bdd;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  }
+
+  .title {
+    color: #ffffff;
+  }
+
+  .input {
+    background-color: #0d1b2a;
+    color: #ffffff;
+    border: 2px solid #555;
+  }
+
+  .input:focus {
+    border-color: #66ccff;
+  }
+
+  .button {
+    background-color: #66ccff;
+    color: #0d1b2a;
+  }
+
+  .button:hover:not(:disabled) {
+    background-color: #3399ff;
+  }
+
+  .validation {
+    color: #ff7777;
+  }
+
+  .errorBox {
+    color: #ff6666;
+  }
+
+  .result {
+    background-color: #0d1b2add;
+    color: #ffffff;
+  }
+
+  .city,
+  .bigTemp,
+  .meta div {
+    color: #ffffff;
+  }
+}

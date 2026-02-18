@@ -66,6 +66,12 @@ export default function NavBar(): JSX.Element {
           </NavLink>
         </li>
 
+         <li className={style.listElement}>
+          <NavLink to="/weatherapp" className={style.link}>
+            Weather
+          </NavLink>
+        </li>
+
         <li className={style.listElement}>
           <button onClick={handleLogout}>Logout</button>
         </li>
