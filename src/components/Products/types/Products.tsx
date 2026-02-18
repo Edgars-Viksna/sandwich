@@ -1,4 +1,4 @@
-import React, { useEffect, useState, type JSX } from "react";
+import { useEffect, useState, type JSX } from "react";
 import type Product from "./Product";
 import { Link } from "react-router-dom";
 

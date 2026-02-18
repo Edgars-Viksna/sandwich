@@ -1,4 +1,4 @@
-import React, { type JSX } from "react";
+import { type JSX } from "react";
 import style from "./NavBar.module.css";
 import { NavLink } from "react-router-dom";
 
@@ -66,7 +66,7 @@ export default function NavBar(): JSX.Element {
           </NavLink>
         </li>
 
-         <li className={style.listElement}>
+        <li className={style.listElement}>
           <NavLink to="/weatherapp" className={style.link}>
             Weather
           </NavLink>

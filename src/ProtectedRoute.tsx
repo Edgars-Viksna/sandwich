@@ -1,4 +1,4 @@
-import React, { type JSX } from "react";
+import { type JSX } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
 export default function ProtectedRoute(): JSX.Element {
@@ -19,9 +19,8 @@ export default function ProtectedRoute(): JSX.Element {
   // кнопка "Назад" не вернёт на защищённую страницу
 
   return (
-<Outlet />
-// Если токен есть - показываем вложенные маршруты.
-// То есть рендерится Layout + страница.
-
-  )
+    <Outlet />
+    // Если токен есть - показываем вложенные маршруты.
+    // То есть рендерится Layout + страница.
+  );
 }

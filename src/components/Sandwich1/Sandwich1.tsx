@@ -1,4 +1,4 @@
-import React, { useState, type JSX } from "react";
+import { useState, type JSX } from "react";
 import useTheme from "../themeContext/useTheme";
 
 import style from "./Sandwich.module.css";
